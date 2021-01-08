@@ -1,5 +1,12 @@
-<h2>Agregar equipos
-</h2>
+<h2>Agregar equipos</h2>
+<form [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)">
+
+  <div>
+    <label for="name">
+      Nombre
+    </label>
+    <input id="name" type="text" formControlName="name">
+  </div>
 
 
 <!-- 
