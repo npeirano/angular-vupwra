@@ -7,6 +7,7 @@ export class AdministrarEquiposService {
 
     //equipos =  [] ;
     equipos = new Array<Equipo>();
+    fixture = new Array<Array<Partido>>;
 
 
   agregarEquipo(eq: Equipo) {
@@ -17,5 +18,8 @@ export class AdministrarEquiposService {
   }
 
   constructor() { }
+
+
+  crearFixu
 
 }
