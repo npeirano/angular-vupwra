@@ -6,6 +6,8 @@ import { FormBuilder } from '@angular/forms';
 
 import { AdministrarEquiposService } from '../administrar-equipos.service';
 
+import { Equipo } from '../equipo';
+
 
 
 @Component({
@@ -26,7 +28,7 @@ export class ProductListComponent {
 
 
   constructor(
-    private formBuilder: FormBuilder,
+    private formBuilder: FormBuilder, private administrarEquiposService: AdministrarEquiposService
   ) {
     this.checkoutForm = this.formBuilder.group({
       name: ''    });
@@ -36,11 +38,11 @@ export class ProductListComponent {
     window.alert('The product has been shared!');
   }
 
-  onSubmit(customerData) {
+  onSubmit(instance: Equipo) {
     // Process checkout data here
     this.checkoutForm.reset();
+    this.administrarEquiposService.agregarEquipo(instance);
 
-    console.warn('Your order has been submitted', customerData);
   }
 
   

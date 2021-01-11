@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AdministrarEquiposService } from '../../administrar-equipos.service';
+import { Equipo } from '../../equipo';
+
 
 
 @Component({
@@ -9,7 +11,13 @@ import { AdministrarEquiposService } from '../../administrar-equipos.service';
 })
 export class ListaEquiposComponent implements OnInit {
 
-  constructor() { }
+      equipos = new Array<Equipo>();
+
+
+  constructor(private administrarEquiposService: AdministrarEquiposService
+) { 
+    this.equipos = administrarEquiposService.equipos;
+  }
 
   ngOnInit() {
   }
