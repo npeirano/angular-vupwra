@@ -1,13 +1,16 @@
 import { Injectable } from '@angular/core';
+import { Equipo } from './equipo';
 
 
 @Injectable()
 export class AdministrarEquiposService {
 
-    equipos = [];
+    //equipos =  [] ;
+    equipos = new Array<Equipo>();
 
-  agregarEquipo(equipo) {
-    this.equipos.push(equipo);
+
+  agregarEquipo(eq: Equipo) {
+    this.equipos.push(eq);
   }
    getEquipos() {
     return this.equipos;
