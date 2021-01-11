@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AdministrarEquiposService } from '../administrar-equipos.service';
 import { Equipo } from '../equipo';
+import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -10,8 +11,9 @@ import { Equipo } from '../equipo';
 })
 export class FixtureComponent implements OnInit {
 
-  constructor(private administrarEquiposService: AdministrarEquiposService) {
-    
+  constructor(private administrarEquiposService: AdministrarEquiposService, private route: ActivatedRoute,
+) {
+
    }
 
   ngOnInit() {
