@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { AdministrarEquiposService } from './administrar-equipos.service';
+import { ListaEquiposComponent } from './product-list/lista-equipos/lista-equipos.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { AdministrarEquiposService } from './administrar-equipos.service';
   declarations: [
     AppComponent,
     TopBarComponent,
-    ProductListComponent
+    ProductListComponent,
+    ListaEquiposComponent
   ],
   bootstrap: [ AppComponent ],
   providers: [AdministrarEquiposService]
