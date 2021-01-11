@@ -8,6 +8,7 @@ import { TopBarComponent } from './top-bar/top-bar.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { AdministrarEquiposService } from './administrar-equipos.service';
 import { ListaEquiposComponent } from './product-list/lista-equipos/lista-equipos.component';
+import { FixtureComponent } from './fixture/fixture.component';
 
 
 @NgModule({
@@ -16,13 +17,16 @@ import { ListaEquiposComponent } from './product-list/lista-equipos/lista-equipo
     ReactiveFormsModule,
     RouterModule.forRoot([
       { path: '', component: ProductListComponent },
+      { path: 'fixture/:fechaId', component: FixtureComponent },
+
     ])
   ],
   declarations: [
     AppComponent,
     TopBarComponent,
     ProductListComponent,
-    ListaEquiposComponent
+    ListaEquiposComponent,
+    FixtureComponent
   ],
   bootstrap: [ AppComponent ],
   providers: [AdministrarEquiposService]

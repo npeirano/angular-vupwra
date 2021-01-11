@@ -22,6 +22,9 @@ export class AdministrarEquiposService {
 
   constructor() { }
 
+ nroEquiposPares(): boolean {
+   return (this.equipos.length - 1) % 2 == 1;
+}
 
   createMatches(){
     let partido : Partido;
