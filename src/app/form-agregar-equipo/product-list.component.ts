@@ -4,6 +4,9 @@ import { products } from '../products';
 
 import { FormBuilder } from '@angular/forms';
 
+import { AdministrarEquiposService } from '../administrar-equipos.service';
+
+
 
 @Component({
   selector: 'app-product-list',
@@ -13,6 +16,13 @@ import { FormBuilder } from '@angular/forms';
 export class ProductListComponent {
   products = products;
   checkoutForm;
+  equiposService: AdministrarEquiposService;
+
+  agregarEquipo(equipo) {
+    this.equiposService.agregarEquipo(equipo);
+    window.alert('Your product has been added to the cart!');
+  }
+
 
 
   constructor(
