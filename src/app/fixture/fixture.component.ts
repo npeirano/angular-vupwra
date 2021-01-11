@@ -12,8 +12,7 @@ import { Partido } from '../partido';
 })
 export class FixtureComponent implements OnInit {
   fecha: Array<Partido>;
-  constructor(private administrarEquiposService: AdministrarEquiposService, private route: ActivatedRoute,
-) {
+  constructor(private administrarEquiposService: AdministrarEquiposService, private route: ActivatedRoute) {
 
    }
 
@@ -23,7 +22,7 @@ export class FixtureComponent implements OnInit {
   const productIdFromRoute = Number(routeParams.get('fechaId'));
 
   // Find the product that correspond with the id provided in route.
-  this.product = products.find(product => product.id === productIdFromRoute);
+  this.fecha = this.administrarEquiposService.fixture[productIdFromRoute - 1];
 }
 
 }
