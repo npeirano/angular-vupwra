@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AdministrarEquiposService } from '../administrar-equipos.service';
+
 
 @Component({
   selector: 'app-top-bar',
@@ -7,11 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TopBarComponent implements OnInit {
 
-  constructor() { }
+  constructor(private administrarEquiposService: AdministrarEquiposService) { }
 
   ngOnInit() {
   }
+  generarFixture(){
+    this.administrarEquiposService.createMatches();
 
+  }
 }
 
 
