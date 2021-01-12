@@ -15,7 +15,7 @@ export class AdministrarEquiposService {
 
   agregarEquipo(eq: Equipo) {
     let nroEquipos= this.equipos.length;
-    if(this.equipos === undefined || this.equipos.length == 0)
+    if(this.equipos === null || this.equipos.length === 0)
       eq.id = 1;
     else
       eq.id = this.equipos.length;
