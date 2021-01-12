@@ -3,6 +3,8 @@ import { AdministrarEquiposService } from '../administrar-equipos.service';
 import { Equipo } from '../equipo';
 import { ActivatedRoute } from '@angular/router';
 import { Partido } from '../partido';
+import { Router } from '@angular/router';
+
 
 
 @Component({
@@ -14,11 +16,17 @@ export class FixtureComponent implements OnInit {
   fecha: String [][];
   comboFechas:string[];
     City: any = ['Fecha 1', 'Fecha 2', 'Fecha 3', 'Fecha 4']
+  modelOfSelectedBrandToBindTo: string = '';
 
 
-  constructor(private administrarEquiposService: AdministrarEquiposService, private route: ActivatedRoute) {
+  constructor(private administrarEquiposService: AdministrarEquiposService, private route: ActivatedRoute,private router: Router) {
 
    }
+
+
+   goPlaces() {
+  this.router.navigate(['/fixture', '']);
+}
 
  ngOnInit() {
   // First get the product id from the current route.
