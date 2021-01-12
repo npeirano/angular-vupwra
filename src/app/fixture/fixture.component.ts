@@ -13,6 +13,8 @@ import { Partido } from '../partido';
 export class FixtureComponent implements OnInit {
   fecha: Array<Partido>;
   lista:string[]=["hola","que","tal", "estas"];
+    City: any = ['Fecha 1', 'Fecha 2', 'Fecha 3', 'Fecha 4']
+
 
   constructor(private administrarEquiposService: AdministrarEquiposService, private route: ActivatedRoute) {
 

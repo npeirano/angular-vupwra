@@ -1,10 +1,9 @@
 <h2>Equipos</h2>
 
-<p>
-<select name="miselect" [(ngModel)]="seleccionado">
-<option [value]="item" *ngFor="let item of lista">{{item}}</option>
+<select class="custom-select" (change)="changeCity($event)" formControlName="cityName">
+   <option value="" disabled>Choose your city</option>
+   <option *ngFor="let city of City" [ngValue]="city">{{city}}</option>
 </select>
-</p>
 <div *ngFor="let partido of fecha">
 
   <h3>
