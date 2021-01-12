@@ -24,7 +24,8 @@ export class FixtureComponent implements OnInit {
    }
 
 
-   goPlaces() {
+   goPlaces(event) {
+     console.log(event.target.value);
   this.router.navigate(['/fixture', '']);
 }
 
