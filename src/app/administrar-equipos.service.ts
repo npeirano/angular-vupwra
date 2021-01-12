@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Equipo } from './equipo';
 import { Partido } from './partido';
+import Tournament from "./Tournament";
 
 
 
@@ -11,6 +12,7 @@ export class AdministrarEquiposService {
     //equipos =  [] ;
     equipos = new Array<Equipo>();
     fixture = new Array<Array<Partido>>();
+    tournament : Tournament;
 
 
   agregarEquipo(eq: Equipo) {
@@ -18,7 +20,7 @@ export class AdministrarEquiposService {
     if(this.equipos === null || this.equipos.length === 0)
       eq.id = 1;
     else
-      eq.id = this.equipos.length;
+      eq.id = this.equipos.length + 1;
     this.equipos.push(eq);
   }
    getEquipos() {
@@ -32,28 +34,8 @@ export class AdministrarEquiposService {
 }
 
   createMatches(){
-    let partido = { } as Partido;
-    for(let i = 0; i < this.equipos.length; i++){
-        let fecha = new Array<Partido> ();
-        let equipoActual = this.equipos[i]; // Hold team in a variable
-        // Iterate through all teams
-        for(let j = 0; j < this.equipos.length; j++){
-            // If the teams are the same continue iterating
-            if(equipoActual.name === this.equipos[j].name){
-                continue;
-            }else {
-            // If teams are from same town, hold the teams in a temporary derby variable
-                partido.local = equipoActual;
-                partido.visitante = this.equipos[j];
-                const partidoAgregar = JSON.parse(JSON.stringify(partido));
-
-                // Go through all matches checking if both teams have played before
-                fecha.push(partidoAgregar);
-            }
-        }
-        this.fixture.push(fecha);
-        // Add derby match after the current team has already played with all other teams
-    }
+    this.tournament = new Tournament(this.equipos);
+    
 }
 
 }
