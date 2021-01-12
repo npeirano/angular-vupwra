@@ -4,10 +4,3 @@
    <option value="" disabled>Choose your city</option>
    <option *ngFor="let city of City" [ngValue]="city">{{city}}</option>
 </select>
-<div *ngFor="let partido of fecha">
-
-  <h3>
-      {{ partido.local.name }} - {{ partido.visitante.name }}
- </h3>
-
-</div>

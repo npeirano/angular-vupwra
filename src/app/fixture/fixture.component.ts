@@ -26,7 +26,7 @@ export class FixtureComponent implements OnInit {
   const productIdFromRoute = Number(routeParams.get('fechaId'));
 
   // Find the product that correspond with the id provided in route.
-  this.fecha = this.administrarEquiposService.tournament.matches[productIdFromRoute -1];
+ this.fecha = this.administrarEquiposService.tournament.matches[productIdFromRoute -1];
 }
 
 }
