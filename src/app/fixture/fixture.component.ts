@@ -12,7 +12,7 @@ import { Partido } from '../partido';
 })
 export class FixtureComponent implements OnInit {
   fecha: String [][];
-  lista:string[]=["hola","que","tal", "estas"];
+  comboFechas:string[]=["hola","que","tal", "estas"];
     City: any = ['Fecha 1', 'Fecha 2', 'Fecha 3', 'Fecha 4']
 
 
