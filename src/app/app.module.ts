@@ -9,12 +9,15 @@ import { ProductListComponent } from './product-list/product-list.component';
 import { AdministrarEquiposService } from './administrar-equipos.service';
 import { ListaEquiposComponent } from './product-list/lista-equipos/lista-equipos.component';
 import { FixtureComponent } from './fixture/fixture.component';
+import { FormsModule } from '@angular/forms';
+
 
 
 @NgModule({
   imports: [
     BrowserModule,
     ReactiveFormsModule,
+    FormsModule,
     RouterModule.forRoot([
       { path: '', component: ProductListComponent },
       { path: 'fixture/:fechaId', component: FixtureComponent },

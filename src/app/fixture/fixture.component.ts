@@ -12,6 +12,8 @@ import { Partido } from '../partido';
 })
 export class FixtureComponent implements OnInit {
   fecha: Array<Partido>;
+  lista:string[]=["hola","que","tal", "estas"];
+
   constructor(private administrarEquiposService: AdministrarEquiposService, private route: ActivatedRoute) {
 
    }
