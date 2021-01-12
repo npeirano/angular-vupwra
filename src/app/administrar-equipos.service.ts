@@ -27,14 +27,14 @@ export class AdministrarEquiposService {
 }
 
   createMatches(){
-    let partido : Partido;
+    let partido = { } as Partido;
     for(let i = 0; i < this.equipos.length; i++){
         let fecha = new Array<Partido> ();
         let equipoActual = this.equipos[i]; // Hold team in a variable
         // Iterate through all teams
         for(let j = 0; j < this.equipos.length; j++){
             // If the teams are the same continue iterating
-            if(equipoActual.nombre === this.equipos[j].nombre){
+            if(equipoActual.name === this.equipos[j].name){
                 continue;
             }else {
             // If teams are from same town, hold the teams in a temporary derby variable

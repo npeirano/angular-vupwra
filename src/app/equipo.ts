@@ -1,5 +1,5 @@
 export interface Equipo {
 
-    nombre: string;
+    name: string;
 
 }
