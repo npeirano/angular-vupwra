@@ -11,7 +11,7 @@ import { Partido } from '../partido';
   styleUrls: ['./fixture.component.css']
 })
 export class FixtureComponent implements OnInit {
-  fecha: Array<Partido>;
+  fecha: String [][];
   lista:string[]=["hola","que","tal", "estas"];
     City: any = ['Fecha 1', 'Fecha 2', 'Fecha 3', 'Fecha 4']
 
@@ -26,7 +26,7 @@ export class FixtureComponent implements OnInit {
   const productIdFromRoute = Number(routeParams.get('fechaId'));
 
   // Find the product that correspond with the id provided in route.
-  this.fecha = this.administrarEquiposService.fixture[productIdFromRoute - 1];
+  this.fecha = this.administrarEquiposService.tournament.matches[productIdFromRoute -1];
 }
 
 }
