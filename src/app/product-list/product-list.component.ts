@@ -31,7 +31,7 @@ export class ProductListComponent {
     private formBuilder: FormBuilder, private administrarEquiposService: AdministrarEquiposService
   ) {
     this.checkoutForm = this.formBuilder.group({
-      name: ''    });
+      nombre: ''    });
   }
 
   share() {
