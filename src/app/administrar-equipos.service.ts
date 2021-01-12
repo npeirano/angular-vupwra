@@ -40,8 +40,9 @@ export class AdministrarEquiposService {
             // If teams are from same town, hold the teams in a temporary derby variable
                 partido.local = equipoActual;
                 partido.visitante = this.equipos[j];
+                const partidoAgregar = partido;
                 // Go through all matches checking if both teams have played before
-                fecha.push(partido);
+                fecha.push(partidoAgregar);
             }
         }
         this.fixture.push(fecha);
