@@ -34,7 +34,7 @@ export class AdministrarEquiposService {
         // Iterate through all teams
         for(let j = 0; j < this.equipos.length; j++){
             // If the teams are the same continue iterating
-            if(equipoActual.nombre == this.equipos[j].nombre){
+            if(equipoActual.nombre === this.equipos[j].nombre){
                 continue;
             }else {
             // If teams are from same town, hold the teams in a temporary derby variable
