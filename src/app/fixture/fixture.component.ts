@@ -12,7 +12,7 @@ import { Partido } from '../partido';
 })
 export class FixtureComponent implements OnInit {
   fecha: String [][];
-  comboFechas:string[]=["hola","que","tal", "estas"];
+  comboFechas:string[];
     City: any = ['Fecha 1', 'Fecha 2', 'Fecha 3', 'Fecha 4']
 
 
@@ -27,6 +27,7 @@ export class FixtureComponent implements OnInit {
 
   // Find the product that correspond with the id provided in route.
  this.fecha = this.administrarEquiposService.tournament.matches[productIdFromRoute -1];
+ this.comboFechas = this.administrarEquiposService.fechas;
  console.log("40 y agua");
 }
 

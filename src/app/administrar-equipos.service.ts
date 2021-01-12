@@ -13,7 +13,7 @@ export class AdministrarEquiposService {
     equipos = new Array<Equipo>();
     fixture = new Array<Array<Partido>>();
     tournament : Tournament;
-    fechas: string [];
+    fechas: string [] = [];
 
 
   agregarEquipo(eq: Equipo) {
