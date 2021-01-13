@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AdministrarEquiposService } from '../administrar-equipos.service';
+import { AdministrarEquiposService,Fecha } from '../administrar-equipos.service';
 import { Equipo } from '../equipo';
 import { ActivatedRoute } from '@angular/router';
 import { Partido } from '../partido';
@@ -16,10 +16,11 @@ import {FormBuilder, FormGroup} from '@angular/forms';
 })
 export class FixtureComponent implements OnInit {
   fecha: String [][];
-  comboFechas:string[];
-    City: any = ['Fecha 1', 'Fecha 2', 'Fecha 3', 'Fecha 4']
-  modelOfSelectedBrandToBindTo: string = '';
+  comboFechas:Fecha[];
   selectForm: FormGroup;
+  valorFecha: string;
+  selectedObject: any = [];
+
 
 
 
@@ -58,6 +59,7 @@ goPlaces(target: string) {
  this.selectForm = this.fb.group({
    fechaControl: [this.comboFechas[productIdFromRoute]]
  });
+ this.selectedObject=this.comboFechas[productIdFromRoute];
  console.log("40 y agua");
 }
 

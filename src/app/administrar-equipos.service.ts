@@ -4,7 +4,9 @@ import { Partido } from './partido';
 import Tournament from "./Tournament";
 
 
-
+export interface Fecha  {
+  nombre: string;
+};
 
 @Injectable()
 export class AdministrarEquiposService {
@@ -13,7 +15,7 @@ export class AdministrarEquiposService {
     equipos = new Array<Equipo>();
     fixture = new Array<Array<Partido>>();
     tournament : Tournament;
-    fechas: string [] = [];
+    fechas: Fecha[] = [];
 
 
   agregarEquipo(eq: Equipo) {
@@ -38,7 +40,8 @@ export class AdministrarEquiposService {
     this.tournament = new Tournament(this.equipos);
     const cantFechas = this.tournament.matches.length;    
     for (let i = 0; i< cantFechas;i++){
-      this.fechas[i] = "Fecha " + (i + 1);
+      let fecha = { nombre:"Fecha " + (i + 1)};
+      this.fechas[i] = fecha;
     }  
 }
 
