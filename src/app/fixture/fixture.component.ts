@@ -24,9 +24,9 @@ export class FixtureComponent implements OnInit {
    }
 
 
-   goPlaces(event) {
-     console.log(event.target.value);
-  this.router.navigate(['/fixture', '']);
+   goPlaces(target: string) {
+    let splitValorComboFecha = target.split(":");
+    this.router.navigate(['/fixture/' + (Number(splitValorComboFecha[0]) + 1) + "", '']);
 }
 
  ngOnInit() {
