@@ -1,8 +1,9 @@
 <h2>Equipos</h2>
-
-<select [(ngModel)]="modelOfSelectedBrandToBindTo" class="custom-select" (change)="goPlaces($event.target.value)">
+<form [formGroup]="selectForm">
+<select formControlName="fechaControl" [(ngModel)]="modelOfSelectedBrandToBindTo" class="custom-select" (change)="goPlaces($event.target.value)">
    <option *ngFor="let fechax of comboFechas" [ngValue]="city">{{fechax}}</option>
 </select>
+</form>
 <div *ngFor="let partido of fecha">
 
   <h3>

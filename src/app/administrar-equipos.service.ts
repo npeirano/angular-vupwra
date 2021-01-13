@@ -36,7 +36,7 @@ export class AdministrarEquiposService {
 
   createMatches(){
     this.tournament = new Tournament(this.equipos);
-    const cantFechas = this.tournament.matches.length - 1;    
+    const cantFechas = this.tournament.matches.length;    
     for (let i = 0; i< cantFechas;i++){
       this.fechas[i] = "Fecha " + (i + 1);
     }  
