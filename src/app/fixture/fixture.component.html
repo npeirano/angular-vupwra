@@ -1,7 +1,7 @@
 <h2>Equipos</h2>
 <form [formGroup]="selectForm">
 <select [(ngModel)]="selectedObject" formControlName="fechaControl" class="custom-select" (change)="goPlaces($event.target.value)">
-   <option *ngFor="let fecha of comboFechas" [ngValue]="comboFechas"> {{fecha.nombre}} </option>
+   <option *ngFor="let fecha of comboFechas" [ngValue]="fecha"> {{fecha.nombre}} </option>
 </select>
 </form>
 <div *ngFor="let partido of fecha">

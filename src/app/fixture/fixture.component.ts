@@ -52,14 +52,15 @@ goPlaces(target: string) {
   const productIdFromRoute = Number(routeParams.get('fechaId'));
   
   
+  
 
   // Find the product that correspond with the id provided in route.
  this.fecha = this.administrarEquiposService.tournament.matches[productIdFromRoute -1];
  this.comboFechas = this.administrarEquiposService.fechas;
  this.selectForm = this.fb.group({
-   fechaControl: [this.comboFechas[productIdFromRoute]]
+   fechaControl: [this.comboFechas[productIdFromRoute - 1]]
  });
- this.selectedObject=this.comboFechas[productIdFromRoute];
+ this.selectedObject=this.comboFechas[productIdFromRoute- 1];
  console.log("40 y agua");
 }
 
