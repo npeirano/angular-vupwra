@@ -23,11 +23,21 @@ export class FixtureComponent implements OnInit {
 
    }
 
-
+  /*
    goPlaces(target: string) {
     let splitValorComboFecha = target.split(":");
-    this.router.navigate(['/fixture/' + (Number(splitValorComboFecha[0]) + 1) + "", '']);
+    this.router.navigate(['/fixture', '{ queryParams: { fechaId: (Number(splitValorComboFecha[0]) + 1) + "" }']);
+    //this.router.navigateByUrl('/fixture/' + (Number(splitValorComboFecha[0]) + 1) + "");
+}*/
+
+goPlaces(target: string) {
+    let splitValorComboFecha = target.split(":");
+    //this.router.navigateByUrl('/fixture/' + (Number(splitValorComboFecha[0]) + 1) + "");
+    this.router.navigateByUrl('/', {skipLocationChange: true}).then(()=>
+   this.router.navigate(['/fixture', Number(splitValorComboFecha[0]) + 1 ]));
 }
+
+
 
  ngOnInit() {
   // First get the product id from the current route.

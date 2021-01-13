@@ -20,7 +20,7 @@ import { FormsModule } from '@angular/forms';
     FormsModule,
     RouterModule.forRoot([
       { path: '', component: ProductListComponent },
-      { path: 'fixture/:fechaId', component: FixtureComponent },
+      { path: 'fixture/:fechaId', component: FixtureComponent,pathMatch: 'full' },
 
     ])
   ],
