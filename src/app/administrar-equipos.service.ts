@@ -2,6 +2,9 @@ import { Injectable } from '@angular/core';
 import { Equipo } from './equipo';
 import { Partido } from './partido';
 import Tournament from "./Tournament";
+import {  Subject } from 'rxjs'
+
+
 
 
 export interface Fecha  {
@@ -17,6 +20,7 @@ export class AdministrarEquiposService {
     tournament : Tournament;
     fechas: Fecha[] = [];
     pares: boolean;
+    
 
 
   agregarEquipo(eq: Equipo) {

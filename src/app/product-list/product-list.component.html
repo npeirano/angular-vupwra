@@ -7,7 +7,7 @@
     </label>
     <input id="name" type="text" formControlName="name">
        <button class="button" type="submit">Agregar equipo</button>
-       <button class="button" (click)="generarFixture()">Generar fixture</button>
+       <button class="button" [disabled] = "equiposPares" (click)="generarFixture()">Generar fixture</button>
 
   </div>
   </form>

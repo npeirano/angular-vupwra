@@ -8,6 +8,9 @@ import { AdministrarEquiposService } from '../administrar-equipos.service';
 
 import { Equipo } from '../equipo';
 
+import { Router } from '@angular/router';
+
+
 
 
 @Component({
@@ -19,6 +22,8 @@ export class ProductListComponent {
   products = products;
   checkoutForm;
   equiposService: AdministrarEquiposService;
+  equiposPares: boolean;
+  
 
   agregarEquipo(equipo) {
     this.equiposService.agregarEquipo(equipo);
@@ -28,10 +33,11 @@ export class ProductListComponent {
 
 
   constructor(
-    private formBuilder: FormBuilder, private administrarEquiposService: AdministrarEquiposService
+    private formBuilder: FormBuilder, private administrarEquiposService: AdministrarEquiposService, private router: Router
   ) {
     this.checkoutForm = this.formBuilder.group({
       name: ''    });
+    this.equiposPares = this.administrarEquiposService.nroEquiposPares();
   }
 
   generarFixture() {
@@ -47,6 +53,8 @@ export class ProductListComponent {
     // Process checkout data here
     this.checkoutForm.reset();
     this.administrarEquiposService.agregarEquipo(instance);
+    this.router.navigateByUrl('/', {skipLocationChange: true}).then(()=>
+   this.router.navigate(['/']));
 
   }
 
