@@ -1,4 +1,5 @@
-<h2>Equipos</h2>
+<h2>Fixture de partidos
+</h2>
 <form [formGroup]="selectForm">
 <select [(ngModel)]="selectedObject" formControlName="fechaControl" class="custom-select" (change)="goPlaces($event.target.value)">
    <option *ngFor="let fecha of comboFechas" [ngValue]="fecha"> {{fecha.nombre}} </option>
