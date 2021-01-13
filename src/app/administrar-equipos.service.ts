@@ -20,12 +20,16 @@ export class AdministrarEquiposService {
 
 
   agregarEquipo(eq: Equipo) {
-    let nroEquipos= this.equipos.length;
+    if(eq.name !=null) {
+       let nroEquipos= this.equipos.length;
     if(this.equipos === null || this.equipos.length === 0)
       eq.id = 1;
     else
       eq.id = this.equipos.length + 1;
     this.equipos.push(eq);
+
+      }
+   
   }
    getEquipos() {
     return this.equipos;

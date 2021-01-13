@@ -1,4 +1,5 @@
 <h2>Agregar equipos</h2>
+
 <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)">
   <div>
     <label for="nombre">
@@ -9,9 +10,10 @@
        <button class="button" (click)="generarFixture()">Generar fixture</button>
 
   </div>
+  </form>
+
   <app-lista-equipos> </app-lista-equipos>
 
-</form>
 
 
 <!-- 
