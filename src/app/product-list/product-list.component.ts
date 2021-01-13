@@ -34,8 +34,13 @@ export class ProductListComponent {
       name: ''    });
   }
 
-  share() {
-    window.alert('The product has been shared!');
+  generarFixture() {
+    if(this.administrarEquiposService.pares) {
+
+    }  else {
+        window.alert('La cantidad de equipos debe ser par para generar el fixture');
+  }
+    
   }
 
   onSubmit(instance: Equipo) {

@@ -16,6 +16,7 @@ export class AdministrarEquiposService {
     fixture = new Array<Array<Partido>>();
     tournament : Tournament;
     fechas: Fecha[] = [];
+    pares: boolean;
 
 
   agregarEquipo(eq: Equipo) {
