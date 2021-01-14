@@ -53,8 +53,7 @@ export class ProductListComponent {
     // Process checkout data here
     this.checkoutForm.reset();
     this.administrarEquiposService.agregarEquipo(instance);
-    this.router.navigateByUrl('/', {skipLocationChange: true}).then(()=>
-   this.router.navigate(['/']));
+    this.equiposPares = this.administrarEquiposService.nroEquiposPares();
 
   }
 
