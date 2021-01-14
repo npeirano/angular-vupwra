@@ -9,7 +9,15 @@ import { AdministrarEquiposService } from '../administrar-equipos.service';
 })
 export class TopBarComponent implements OnInit {
 
-  constructor(private administrarEquiposService: AdministrarEquiposService) { }
+  torneoCreado: boolean;
+
+
+  constructor(private administrarEquiposService: AdministrarEquiposService) { 
+
+    this.administrarEquiposService.tournamentChange.subscribe((value) => { 
+      this.torneoCreado = this.administrarEquiposService.tournament == null; 
+    });
+  }
 
   ngOnInit() {
   }

@@ -20,6 +20,11 @@ export class AdministrarEquiposService {
     tournament : Tournament;
     fechas: Fecha[] = [];
     pares: boolean;
+    tournamentChange: Subject<string> = new Subject<string>();
+
+    change(){
+      this.tournamentChange.next();   
+  }
     
 
 
@@ -47,6 +52,7 @@ export class AdministrarEquiposService {
 
   createMatches(){
     this.tournament = new Tournament(this.equipos);
+    this.change();
     const cantFechas = this.tournament.matches.length;    
     for (let i = 0; i< cantFechas;i++){
       let fecha = { nombre:"Fecha " + (i + 1)};
