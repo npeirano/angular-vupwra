@@ -42,6 +42,8 @@ export class ProductListComponent {
 
   generarFixture() {
     if(this.administrarEquiposService.nroEquiposPares()) {
+            this.administrarEquiposService.createMatches();
+            this.router.navigate(['/fixture', 1 ]);
 
     }  else {
         window.alert('La cantidad de equipos debe ser par para generar el fixture');

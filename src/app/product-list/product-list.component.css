@@ -10,3 +10,10 @@ can be found in the LICENSE file at https://angular.io/license
   display:inline-block;
   margin-left: 10px;
 }
+
+a.disabled {
+    pointer-events: none;
+  cursor: default;
+  text-decoration: none;
+  color: black;
+}
